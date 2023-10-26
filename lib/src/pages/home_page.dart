@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_hooks_example/src/hooks/scrollcontroller_for_animation.dart';
 
 class HomePage extends HookWidget {
   const HomePage({super.key});
@@ -39,13 +40,16 @@ class HomePage extends HookWidget {
       initialValue: 1,
     );
 
+    final _scrollController =
+        useScrollControllerForAnimation(_hideFabAnimController);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter Hooks Home Page'),
       ),
       body: ListView(
-        //controller: _scrollController,
+        controller: _scrollController,
         children: <Widget>[
           for (int i = 0; i < 5; i++)
             const Card(child: FittedBox(child: FlutterLogo())),
