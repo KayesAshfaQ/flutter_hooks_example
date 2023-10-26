@@ -52,25 +52,3 @@ class _ScrollControllerForAnimationHookState
   void dispose() => _scrollController.dispose();
 }
 
-// ScrollController useScrollControllerForAnimation(
-//     AnimationController animationController) {
-//   final scrollController = ScrollController();
-
-//   scrollController.addListener(() {
-//     switch (scrollController.position.userScrollDirection) {
-//       // Scrolling up - forward the animation (value goes to 1)
-//       case ScrollDirection.forward:
-//         animationController.forward();
-//         break;
-//       // Scrolling down - reverse the animation (value goes to 0)
-//       case ScrollDirection.reverse:
-//         animationController.reverse();
-//         break;
-//       // Idle - keep FAB visibility unchanged
-//       case ScrollDirection.idle:
-//         break;
-//     }
-//   });
-
-//   return scrollController;
-// }

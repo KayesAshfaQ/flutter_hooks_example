@@ -5,34 +5,6 @@ import 'package:flutter_hooks_example/src/hooks/scrollcontroller_for_animation.d
 class HomePage extends HookWidget {
   const HomePage({super.key});
 
-  // @override
-  // void initState() {
-  //   _scrollController = ScrollController();
-  //   _hideFabAnimController = AnimationController(
-  //     vsync: this,
-  //     duration: const Duration(milliseconds: 300),
-  //     value: 1,
-  //   );
-
-  //   _scrollController.addListener(() {
-  //     switch (_scrollController.position.userScrollDirection) {
-  //       // Scrolling up - forward the animation (value goes to 1)
-  //       case ScrollDirection.forward:
-  //         _hideFabAnimController.forward();
-  //         break;
-  //       // Scrolling down - reverse the animation (value goes to 0)
-  //       case ScrollDirection.reverse:
-  //         _hideFabAnimController.reverse();
-  //         break;
-  //       // Idle - keep FAB visibility unchanged
-  //       case ScrollDirection.idle:
-  //         break;
-  //     }
-  //   });
-
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     final _hideFabAnimController = useAnimationController(
@@ -69,10 +41,4 @@ class HomePage extends HookWidget {
     );
   }
 
-  // @override
-  // void dispose() {
-  //   _scrollController.dispose();
-  //   _hideFabAnimController.dispose();
-  //   super.dispose();
-  // }
 }
